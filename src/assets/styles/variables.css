@@ -1,0 +1,24 @@
+:root {
+  --color-yellow: #F4D91F;
+  --color-yellow-light: #FFF3A0;
+  --color-purple: #BE85D6;
+  --color-purple-light: #F1DDF7;
+  --color-teal: #1E5267;
+  --color-teal-dark: #143B4B;
+  --color-cream: #FFFBEF;
+  --color-white: #FFFFFF;
+  --color-text: #26373D;
+  --color-text-light: #67767C;
+  --gradient-primary: linear-gradient(120deg,#B878D4 0%,#D8B5CF 38%,#F4E49A 70%,#F4D91F 100%);
+  --font-sans: "PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+  --container: 1200px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --shadow-sm: 0 10px 30px rgba(20,59,75,.08);
+  --shadow-md: 0 16px 42px rgba(20,59,75,.12);
+  --shadow-lg: 0 24px 65px rgba(20,59,75,.15);
+  --fs-hero: clamp(2.65rem,5.8vw,5.2rem);
+  --fs-h1: clamp(2.25rem,4.6vw,4.2rem);
+  --fs-h2: clamp(1.85rem,3.6vw,3.15rem);
+}
