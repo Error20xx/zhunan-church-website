@@ -1,13 +1,9 @@
-import testimony01 from '../assets/images/testimonies/testimony01.png'
-import testimony02 from '../assets/images/testimonies/testimony02.png'
-import testimony03 from '../assets/images/testimonies/testimony03.png'
-
 export const testimonyCategories = ['全部', '得救', '醫治', '特會心得']
 
 export const testimonies = [
   {
-    id: 1, title: '那份沒有條件的愛', excerpt: '一個從不相信真愛與真心的女孩，因著教會肢體真實的陪伴與上帝奇妙的作為，生命從孤單、防備，走向被愛、被接納與盼望。', author: '阿雅', category: '得救', date: '2026.08.01', featured: true,
-    image: testimony02,
+    id: 1, title: '終於找到愛', excerpt: '一個從不相信真愛與真心的女孩，因著教會肢體真實的陪伴與上帝奇妙的作為，生命從孤單、防備，走向被愛、被接納與盼望。', author: '阿雅', category: '得救', date: '2026.08.01', featured: true,
+    image: '/images/testimonies/testimony04.png',
     content: ['我生長在一個小康家庭，父母在我國小三年級時離婚，之後我和弟弟便跟著父親在台北生活。',
       '因為家中只有我一個女生，所以家裡的大小事情幾乎都是由我管理。',
       '在同學和家人的眼中，我是一個樂觀開朗、成熟懂事的女生，更是大家的開心果，似乎沒有任何難題纏身，每天總是開開心心的。',
@@ -45,8 +41,8 @@ export const testimonies = [
     ],
   },
   {
-    id: 2, title: '一步一步，被上帝改變', excerpt: '從驕傲到謙卑，從掌控到饒恕，一位少年在異鄉遇見耶穌，經歷生命被翻轉的真實見證。', author: '徐嘉鴻', category: '得救', date: '2026.08.01', featured: true,
-    image: testimony02,
+    id: 2, title: '從驕傲霸道，到被上帝塑造', excerpt: '從驕傲到謙卑，從掌控到饒恕，一位少年在異鄉遇見耶穌，經歷生命被翻轉的真實見證。', author: '徐嘉鴻', category: '得救', date: '2026.08.01', featured: true,
+    image: '/images/testimonies/testimony06.png',
     content: ['弟兄姊妹平安，很高興可以在這裡跟大家分享我的得救見證。',
       '我是第一代基督徒。因為是客家人的緣故，所以從小最有印象、也最深刻接觸到的信仰，就是民間信仰。',
       '在我十歲那一年，因為爸爸要和別人合夥投資，我和姊姊便離鄉背井，被爸媽帶到中南美洲的一個小國家——貝里斯留學、學習英文，一待就是九年。',
@@ -85,8 +81,8 @@ export const testimonies = [
     ],
   },
   {
-    id: 3, title: '得贖的旅程', excerpt: '童年的創傷讓她築起高牆，也讓她不敢相信婚姻；直到遇見耶穌，她從被愛、被醫治到選擇饒恕，生命與家庭因此迎來新的開始。', author: '葉怡君', category: '得救', date: '2026.08.01', featured: true,
-    image: testimony02,
+    id: 3, title: '從害怕婚姻，到重拾家的美好', excerpt: '童年的創傷讓她築起高牆，也讓她不敢相信婚姻；直到遇見耶穌，她從被愛、被醫治到選擇饒恕，生命與家庭因此迎來新的開始。', author: '葉怡君', category: '得救', date: '2026.08.01', featured: true,
+    image: '/images/testimonies/testimony05.png',
     content: ['曠野到得贖的旅程',
       '成長過程中，看見母親與繼父的婚姻生活，常使我心裡感到恐懼與害怕。因為繼父天天醉酒後就大吵大鬧，再加上母親再嫁後的家庭環境複雜，我很自然地築起了強烈的自我保護意識。',
       '長期飽受苦毒、不饒恕與心靈創傷的我，總認為沒有人會愛我，也覺得自己不值得被愛，因此告訴自己，絕對不要踏入婚姻。',
@@ -121,7 +117,7 @@ export const testimonies = [
   },
   {
     id: 4, title: '拯救我的『神』', excerpt: '失去孩子、丈夫中風、沉重債務與身心靈的痛苦，幾乎壓垮了她；直到上帝介入她的人生，使她從黑暗中得著醫治、自由與新的盼望。', author: '張貴美', category: '得救', date: '2026.08.01', featured: false,
-    image: testimony02,
+    image: '/images/testimonies/testimony02.png',
     content: ['灰暗破碎的生命',
       '我是客家人。要讓像我這樣深受傳統祭拜影響的人信主，若不是神奇妙地動工與引導，真的很不容易。',
       '我生長在南庄一個務農的家庭。家中雖不富有，卻總是和樂融融。',
@@ -167,8 +163,8 @@ export const testimonies = [
     ],
   },
   {
-    id: 5, title: '重新認識『愛』', excerpt: '一位因過去的失敗與羞愧而逃避神、封閉自己的母親，在一次更新營中重新聽見天父說：「孩子，妳永遠是我的寶貝。」從此走出自責與恐懼，經歷婚姻、生命與信仰的全面更新。', author: '江明君', category: '醫治', date: '2026.08.01', featured: false,
-    image: testimony03,
+    id: 5, title: '從逃避親密關係，到重新接納愛', excerpt: '一位因過去的失敗與羞愧而逃避神、封閉自己的母親，在一次更新營中重新聽見天父說：「孩子，妳永遠是我的寶貝。」從此走出自責與恐懼，經歷婚姻、生命與信仰的全面更新。', author: '江明君', category: '醫治', date: '2026.08.01', featured: false,
+    image: '/images/testimonies/testimony03.png',
     content: ['「孩子，永遠妳是我的寶貝！」',
       '老實說，在參加第二屆全人更新營之前，我的心態並沒有很積極。因為心中放心不下孩子，只因小組長不斷推動，我才勉強答應參加。',
       '營會第一天晚上，我承認自己還沒有預備好，所以並不太願意敞開自己的心。',
@@ -198,7 +194,7 @@ export const testimonies = [
   },
   {
     id: 6, title: '勇敢，是因為神與我同在', excerpt: '勇敢不是因為不害怕，而是相信神與我同在。當我跨出那一步，我發現神一直都知道我的心。', author: '葉璽艾', category: '特會心得', date: '2026.07.05', featured: false,
-    image: testimony01,
+    image: '/images/testimonies/testimony01.png',
     content: ['很高興這次可以參加 New Era。在這次的特會當中，我學到很多東西，也經歷到了神奇妙的恩典。',
       '這件事要從營會第一天晚上開始說起。每天晚上，我們都會有一個分享環節。那天晚上，我分享說，希望自己隔天可以變得更勇敢一點，能夠勇敢地走出去回應呼召。',
       '大家不要看我平常在外面好像很 E、很有自信，其實到了人生地不熟的地方，我還是會很緊張，也很愛面子。所以那天晚上，我就跟姊姊們分享，希望自己隔天可以更勇敢地接受呼召。',
@@ -213,7 +209,7 @@ export const testimonies = [
   },
   {
     id: 7, title: '走新路，走進真正的身分', excerpt: '從小害怕死亡，也一直找不到自己的價值；這次神讓我知道，真正的答案不是找到所有答案，而是相信自己屬於祂。', author: 'Aino', category: '特會心得', date: '2026.07.05', featured: false,
-    image: testimony01,
+    image: '/images/testimonies/testimony07.png',
     content: ['在這次 New Era 特會中，最觸動我的是最後一天國倫牧師分享「走新路」的信息。',
       '他提到一句話：「我們是神的兒女，不論是生是死，都在祂的手中。」這句話對我來說非常深刻。',
       '因為從國小二年級開始，我就一直很害怕死亡，也常常思考：「既然人終究都會死，為什麼還要存在？」這個問題一直陪伴著我，甚至到了營會前一天，都還沒有離開。',
@@ -231,7 +227,7 @@ export const testimonies = [
   },
   {
     id: 8, title: '每個人都有神的計畫', excerpt: '神不是等我變得完美才使用我，而是一步步帶領我成長，並按著祂創造我的方式完成祂的呼召。', author: '陳秉田', category: '特會心得', date: '2026.07.19', featured: false,
-    image: testimony01,
+    image: '/images/testimonies/testimony08.png',
     content: ['這次的特會讓我有很多收穫。',
       '從第一天講到要重新挖復興的井，到後面講到呼召和合一，以及彼得失敗後仍然被上帝接納，讓我明白，神不是看我夠不夠完美，而是一步一步地帶領我成長。',
       '其中，讓我最感動的是巽正牧師分享的「呼召之路」。',
@@ -246,7 +242,7 @@ export const testimonies = [
   },
   {
     id: 9, title: '祂從未放棄我', excerpt: '從害怕別人的眼光，到勇敢舉起手、走到台前，我經歷了神的愛與陪伴，也相信祂正在塑造我成為祂喜悅的樣子。', author: '黃芝羽', category: '特會心得', date: '2026.07.19', featured: false,
-    image: testimony01,
+    image: '/images/testimonies/testimony09.png',
     content: ['在這次的 WE R ONE 青年特會中，我再次感受到許多感動，也領受到很多。',
       '我還記得第一天晚上，協聰牧師帶領我們為自己禱告三件事，而那三件事都很符合我的生命。當我開始禱告時，我深深感受到神與我同在，當下真的很感動，眼淚也很快就流了下來。',
       '我感覺神在當下真實地改變我。',
@@ -275,7 +271,7 @@ export const testimonies = [
   },
   {
     id: 10, title: '重新找回起初的愛', excerpt: '在高中生活的壓力與迷惘中，神透過祂的話語提醒我：無論經過洪水或烈火，祂都必與我同在，永不離開。', author: '李宥璇', category: '特會心得', date: '2026.07.19', featured: false,
-    image: testimony01,
+    image: '/images/testimonies/testimony01.png',
     content: ['很開心這次能參加 We Are One 特會。',
       '在這次的特會中，我真的感受到神一直在對我說話。',
       '升上高中後，因為每天都要上課、練習，還要忙很多自己的事情，所以常常覺得很累。慢慢地，我變得懶得參加小組，也不想來主日。',
@@ -299,7 +295,7 @@ export const testimonies = [
   },
   {
     id: 11, title: '不要回應世界，只要定睛於神', excerpt: '神不只在信息中回應我的呼召，也在一次次對話與服事中回答心中的疑問，讓我學會不再回應世界的聲音，而是專心跟隨祂。', author: '余皓婷', category: '特會心得', date: '2026.07.19', featured: false,
-    image: testimony01,
+    image: '/images/testimonies/testimony07.png',
     content: ['很開心今年再次參與節目組舞監的服事。',
       '經過去年忙忙碌碌、每天早出晚歸的特會生活後，我其實不知道自己是哪裡來的勇氣，願意再一次投入這份既辛苦又充滿挑戰的服事。',
       '果不其然，今年的忙碌程度和疲憊程度，讓我覺得去年根本不算什麼。幾乎每天只吃一餐，平均睡眠不到四個小時。',
@@ -329,7 +325,7 @@ export const testimonies = [
   },
   {
     id: 12, title: '不是責備，而是挽回', excerpt: '神沒有要求我先恢復完全才回到祂面前，而是在我最疲憊的時候，用一句溫柔的提醒，帶我重新回到祂的心意裡。', author: '鄭曈', category: '特會心得', date: '2026.07.19', featured: false,
-    image: testimony01,
+    image: '/images/testimonies/testimony08.png',
     content: ['在這次 WE R ONE 的營會中，我擔任了領隊。',
       '因為是在剛結束這學期課程的第三天，就出發前往台北，所以其實我還處在一個很疲憊、尚未恢復精神的狀態。',
       '而在第一天聚會結束前，淑惠牧師又不小心受傷，讓我感受到自己好像承擔了更多的壓力和責任。',
@@ -355,7 +351,7 @@ export const testimonies = [
   },
   {
     id: 13, title: '卸下面具，遇見真正的自己', excerpt: '神一步步醫治我生命深處的傷痕，讓我明白，真正的剛強不是來自自己，而是來自祂眼中所看見的我。', author: '唐子涵', category: '特會心得', date: '2026.07.26', featured: false,
-    image: testimony01,
+    image: '/images/testimonies/testimony01.png',
     content: ['很感恩能參加這次的領袖訓練課程，重新恢復我裡面枯竭的生命，也重新找到上帝的愛。',
       '從第一天開始，我就看見一個畫面，是一個魚缸，裡面有彩色點點魚。看到這個畫面，我在想，魚沒有水會死，那我的生命應該也需要活水。我求上帝的活水湧流在我的生命中。',
       '在畫面的左下角，我看見一個布背包，裡面有各式各樣長長的工具，有劍，也有一些長工具。',

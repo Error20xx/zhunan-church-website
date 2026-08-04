@@ -11,18 +11,10 @@ const logoFailed = ref(false)
     <div class="container hero-grid">
       <div class="hero-copy">
         <p class="label">WELCOME HOME</p>
-        <h1>我們不完美，<br /><span>卻願意彼此同行</span></h1>
-        <p class="lead">無論你正在哪一段人生旅程，都歡迎來到這裡，與我們一起經歷耶穌的愛與幫助。</p>
+        <h1>來到這裡<br /><span>遇見愛與盼望</span></h1>
+        <p class="lead">陪你認識耶穌、找到歸屬<br />一起活出豐盛而有力量的生命</p>
         <div class="actions"><!--<BaseButton to="/about">認識我們</BaseButton>-->
           <BaseButton to="/#meetings" variant="light">查看聚會時間</BaseButton>
-        </div>
-      </div>
-      <div class="visual" aria-label="基督教竹南靈糧堂標誌">
-        <div class="glow"></div>
-        <div class="logo-card float">
-          <img v-if="!logoFailed" :src="logoUrl" alt="基督教竹南靈糧堂 Logo" @error="logoFailed = true" />
-          <div v-else class="logo-text"><strong>基督教竹南靈糧堂</strong><span>Bread of Life Christian Church in Zhunan</span>
-          </div>
         </div>
       </div>
     </div>
@@ -44,12 +36,16 @@ const logoFailed = ref(false)
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.08fr .92fr;
+  grid-template-columns: 1fr;
+  justify-items: center;
   align-items: center;
-  gap: clamp(2rem, 5vw, 5rem);
+  width: 100%;
 }
 
 .hero-copy {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
   animation: fade-up .8s ease both;
 }
 
@@ -65,21 +61,23 @@ const logoFailed = ref(false)
 }
 
 h1 {
-  max-width: 720px;
-  margin: 1.2rem 0 1.3rem;
+  max-width: 900px;
+  margin: 1.2rem auto 1.3rem;
   color: var(--color-teal-dark);
   font-size: var(--fs-hero);
   line-height: 1.12;
   letter-spacing: -.035em;
+  text-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
 }
 
 h1 span {
   color: white;
-  text-shadow: 0 2px 18px rgba(20, 59, 75, .13);
+  text-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
 }
 
 .lead {
   max-width: 610px;
+  margin-inline: auto;
   color: #29444d;
   font-size: clamp(1rem, 1.6vw, 1.17rem);
   line-height: 1.9;
@@ -88,6 +86,7 @@ h1 span {
 .actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: .8rem;
   margin-top: 2rem;
 }

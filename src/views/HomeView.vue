@@ -85,11 +85,11 @@ const values = [{ icon: '✦', title: '真實信仰', text: '誠實面對生命�
           <p class="section-eyebrow">FOLLOW US</p>
           <h2>追蹤我們的最新消息</h2>
           <p>
-            查看近期聚會、活動消息與教會生活，歡迎追蹤竹南靈糧堂 Facebook 粉絲專頁。
+            查看近期聚會、活動消息與教會生活，歡迎追蹤竹南靈糧堂 Facebook 粉絲專頁
           </p>
 
           <a class="facebook-link" :href="churchInfo.facebook" target="_blank" rel="noopener noreferrer">
-            前往 Facebook 粉絲專頁 ↗
+            前往 Facebook 粉絲專頁 ⬈
           </a>
         </div>
 
