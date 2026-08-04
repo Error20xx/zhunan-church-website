@@ -1,14 +1,52 @@
 <script setup>
-defineProps({ meeting: { type: Object, required: true } })
+import { computed } from 'vue'
+import {
+  Sun,
+  Users,
+  BookOpen,
+  House,
+  MapPin,
+} from 'lucide-vue-next'
+
+const props = defineProps({
+  meeting: {
+    type: Object,
+    required: true,
+  },
+})
+
+const iconMap = {
+  sun: Sun,
+  users: Users,
+  book: BookOpen,
+  house: House,
+}
+
+const meetingIcon = computed(() => {
+  return iconMap[props.meeting.icon] ?? Users
+})
 </script>
 
 <template>
   <article class="meeting-card" :class="`meeting-card--${meeting.tone}`">
-    <span class="icon" aria-hidden="true">{{ meeting.icon }}</span>
+    <span class="icon" aria-hidden="true">
+      <component :is="meetingIcon" :size="24" :stroke-width="1.8" />
+    </span>
+
     <h3>{{ meeting.name }}</h3>
-    <p class="time">{{ meeting.time }}</p>
-    <p class="location">⌖ {{ meeting.location }}</p>
-    <p class="description">{{ meeting.description }}</p>
+
+    <p class="time">
+      {{ meeting.time }}
+    </p>
+
+    <p class="location">
+      <MapPin :size="15" :stroke-width="1.8" aria-hidden="true" />
+      <span>{{ meeting.location }}</span>
+    </p>
+
+    <p class="description">
+      {{ meeting.description }}
+    </p>
   </article>
 </template>
 
@@ -40,7 +78,11 @@ defineProps({ meeting: { type: Object, required: true } })
   border-radius: 50%;
   background: rgba(255, 255, 255, .7);
   color: var(--color-teal);
-  font-size: 1.4rem;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 h3 {
@@ -55,8 +97,15 @@ h3 {
 }
 
 .location {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
   margin: .3rem 0 1rem;
   color: var(--color-text-light);
+}
+
+.location svg {
+  flex: 0 0 auto;
 }
 
 .description {

@@ -1,7 +1,9 @@
 <script setup>
 import { ref } from 'vue'
+import { Mail } from 'lucide-vue-next'
 import { churchInfo } from '../data/churchInfo'
 import logoUrl from '../assets/images/church-logo.png'
+
 const logoFailed = ref(false)
 </script>
 
@@ -14,11 +16,13 @@ const logoFailed = ref(false)
           <span v-else>基督教竹南靈糧堂</span>
           <strong>{{ churchInfo.churchName }}</strong>
         </div>
-        <p>{{ churchInfo.slogan }}。<br />我們期待在這裡與你相遇。</p>
+        <p>來到這裡，遇見愛與盼望</p>
         <div class="socials">
           <a :href="churchInfo.facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
           <!--<a :href="churchInfo.instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a>-->
-          <a :href="`mailto:${churchInfo.email}`" aria-label="Email">✉</a>
+          <a :href="`mailto:${churchInfo.email}`" aria-label="寄送 Email">
+            <Mail :size="18" :stroke-width="1.8" aria-hidden="true" />
+          </a>
         </div>
       </section>
       <section>
@@ -103,6 +107,11 @@ a:hover {
   border: 1px solid rgba(255, 255, 255, .25);
   border-radius: 50%;
   color: white;
+}
+
+.socials a svg {
+  width: 18px;
+  height: 18px;
 }
 
 .copyright {
