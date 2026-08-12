@@ -31,7 +31,7 @@ const values = [{ icon: '✦', title: '真實信仰', text: '誠實面對生命�
     </div>
   </section>-->
 
-  <section class="section stories">
+  <section id="section stories" class="section stories">
     <div class="container">
       <SectionTitle eyebrow="Still Matter" title="故事" subtitle="那些改變生命的故事。" />
       <div class="card-grid reveal">

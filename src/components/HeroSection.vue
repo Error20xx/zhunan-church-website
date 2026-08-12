@@ -18,7 +18,7 @@ const logoFailed = ref(false)
         </div>
       </div>
     </div>
-    <a href="#about-home" class="scroll-cue"><span>向下探索</span><i aria-hidden="true">↓</i></a>
+    <a href="#section stories" class="scroll-cue"><span>向下探索</span><i aria-hidden="true">↓</i></a>
   </section>
 </template>
 
