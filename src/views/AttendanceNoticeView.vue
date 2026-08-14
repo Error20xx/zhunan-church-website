@@ -387,8 +387,10 @@ const reminders = [
     }
 
     .event-hero h1 {
-        font-size: clamp(2.6rem, 12vw, 4rem);
-        line-height: 1.12;
+        font-size: clamp(2rem, 9vw, 2.6rem);
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+        white-space: nowrap;
     }
 
     .hero-meta {

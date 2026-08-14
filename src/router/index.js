@@ -27,7 +27,7 @@ router.afterEach((to) => {
     'testimony-detail': '生命見證｜基督教竹南靈糧堂',
     gallery: '活動照片｜基督教竹南靈糧堂',
     'not-found': '找不到頁面｜基督教竹南靈糧堂',
-    'attendance-notice': '赴會通知｜基督教竹南靈糧堂',
+    'attendance-notice': '赴會通知',
   }
   document.title = titles[to.name] || titles.home
 })
