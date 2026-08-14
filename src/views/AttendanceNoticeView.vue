@@ -67,8 +67,8 @@ const reminders = [
             <div class="container">
                 <div class="reminder-card">
                     <div class="reminder-heading">
-                        <p class="section-label">BEFORE YOU COME</p>
-                        <h2>赴會前提醒</h2>
+                        <p class="section-label">IMPORTANT NOTES</p>
+                        <h2>注意事項</h2>
                     </div>
 
                     <div class="reminder-list">
