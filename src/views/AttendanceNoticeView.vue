@@ -11,6 +11,8 @@ import {
     MapPinned,
     ClipboardList,
     ChevronDown,
+    Menu,
+    X,
 } from 'lucide-vue-next'
 
 const event = {
@@ -24,6 +26,29 @@ const openDay = ref(0)
 
 const toggleDay = (index) => {
     openDay.value = openDay.value === index ? -1 : index
+}
+
+// 頁面快速選單｜點擊後平滑捲動到指定區塊。
+const activeSection = ref('schedule')
+const isQuickMenuOpen = ref(false)
+
+const quickNavItems = [
+    { id: 'schedule', label: '特會流程' },
+    { id: 'attendance', label: '赴會通知' },
+    { id: 'groups', label: '分組名單' },
+    { id: 'evangelism', label: '傳福音推薦地' }
+]
+
+const scrollToSection = (sectionId) => {
+    const target = document.getElementById(sectionId)
+    if (!target) return
+
+    activeSection.value = sectionId
+    isQuickMenuOpen.value = false
+    target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    })
 }
 
 // 特會流程｜目前依「2026 苗栗青年粗流」整理。
@@ -125,7 +150,7 @@ const isSecondaryItem = (title) => {
 const attendanceNotice = {
     theme: 'THE ASSIGNMENT',
     intro: [
-        '四年前，我們開始了一個很單純的夢想—讓苗栗的青年，不再只是各自在自己的教會裡，而是有一天能夠一起站在神的面前。',
+        '四年前，我們開始了一個很單純的夢想——讓苗栗的青年，不再只是各自在自己的教會裡，而是有一天能夠一起站在神的面前。',
         '於是，「苗栗百人青年」開始了，一路走到第四屆，我們越來越明白，神把我們聚集起來，不只是為了辦一場特會，也不只是為了經歷幾天很感動、很熱血的聚會。',
         '每一次的聚集，都在預備我們回到自己的位置。',
         '回到校園、回到家庭、回到職場、回到教會，在神所放置我們的地方，活出屬於這個世代的使命。',
@@ -194,7 +219,7 @@ const attendanceNotice = {
             items: [
                 '課程期間請將手機調整為靜音或震動模式，並配合大會手機管理規定，於指定時間交由隊輔或工作人員保管，休息時間統一歸還；若以手機做筆記，請勿進行與課程無關之使用。',
                 '除大會指定用餐時間及區域外，會場內禁止飲食及飲用有色飲料，僅限白開水。',
-                '請共同愛護會場環境、設備及所有公用物品，請勿任意移動、拆卸、塗寫或損壞；使用完畢後請協助恢復原狀。',
+                '請共同愛護會場環境、設備及所有公用物品，請勿任意移動、拆卸、塗寫或損壞；使用完畢後請協助恢復原狀。若因個人不當使用造成設備或物品損壞、遺失，須依實際情況照價賠償。',
                 '垃圾、廚餘及回收物，請依照大會指示分類並丟棄至指定地點，共同維護環境整潔。'
             ]
         },
@@ -211,7 +236,7 @@ const attendanceNotice = {
                 '營會期間請以小隊為單位行動，勿擅自脫隊或離開營會、住宿場地。',
                 '如需中途離營，請先告知所屬教會隊輔、家長或牧者，並攜帶身分證件至大會服務台填寫離營切結書；若人在住宿地點，請通知隊輔或家長，並攜帶證件向住宿同工辦理離營手續。',
                 '未依規定辦理離營手續而擅自離開者，大會不承擔離營後之安全責任。',
-                '活動期間請穿著合宜、舒適、方便活動的服裝，避免過度暴露或過短的衣著，也請避免影響跑動、外出及團體活動的穿著。'
+                '活動期間請穿著合宜、舒適且方便活動的服裝，避免過度暴露、過短、過於寬鬆或容易走光的衣著，以確保跑動、外出及團體活動時的安全與便利。'
             ]
         },
         {
@@ -308,8 +333,31 @@ const announcements = [
             </div>
         </section>
 
+        <!-- 右下角快速功能選單 -->
+        <nav class="quick-nav" :class="{ 'quick-nav--open': isQuickMenuOpen }" aria-label="頁面快速選單">
+            <div v-if="isQuickMenuOpen" class="quick-nav__panel">
+                <p class="quick-nav__title">快速前往</p>
+
+                <button v-for="item in quickNavItems" :key="item.id" type="button"
+                    class="quick-nav__button"
+                    :class="{ 'quick-nav__button--active': activeSection === item.id }"
+                    @click="scrollToSection(item.id)">
+                    <span class="quick-nav__dot" aria-hidden="true"></span>
+                    <span>{{ item.label }}</span>
+                </button>
+            </div>
+
+            <button type="button" class="quick-nav__toggle"
+                :aria-expanded="isQuickMenuOpen"
+                aria-label="開啟快速選單"
+                @click="isQuickMenuOpen = !isQuickMenuOpen">
+                <X v-if="isQuickMenuOpen" :size="22" />
+                <Menu v-else :size="23" />
+            </button>
+        </nav>
+
         <!-- 01 特會流程 -->
-        <section class="section schedule-section">
+        <section id="schedule" class="section schedule-section">
             <div class="container schedule-container">
                 <div class="section-heading schedule-heading">
                     <p class="section-label">SCHEDULE</p>
@@ -353,7 +401,7 @@ const announcements = [
         </section>
 
         <!-- 02 赴會通知 -->
-        <section class="section light-section attendance-section">
+        <section id="attendance" class="section light-section attendance-section">
             <div class="container attendance-container">
                 <div class="section-heading attendance-heading">
                     <p class="section-label">ATTENDANCE NOTICE</p>
@@ -521,7 +569,7 @@ const announcements = [
         </section>
 
         <!-- 03 分組名單 -->
-        <section class="section alt-section group-section">
+        <section id="groups" class="section alt-section group-section">
             <div class="container group-container">
                 <div class="section-heading">
                     <p class="section-label">GROUP LIST</p>
@@ -552,7 +600,7 @@ const announcements = [
         </section>
 
         <!-- 04 傳福音推薦地 -->
-        <section class="section light-section">
+        <section id="evangelism" class="section light-section">
             <div class="container">
                 <div class="section-heading">
                     <p class="section-label">EVANGELISM PLACES</p>
@@ -585,6 +633,129 @@ const announcements = [
     min-height: 100vh;
     background: #f8f3e8;
     color: #153f4e;
+}
+
+/* =========================
+   右下角快速功能選單
+   ========================= */
+.quick-nav {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.quick-nav__panel {
+    width: 220px;
+    padding: .75rem;
+    border: 1px solid rgba(21, 63, 78, .10);
+    border-radius: 20px;
+    background: rgba(255, 253, 248, .97);
+    box-shadow: 0 18px 45px rgba(21, 63, 78, .16);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    animation: quick-menu-in .18s ease-out;
+}
+
+.quick-nav__title {
+    margin: 0 0 .45rem;
+    padding: .25rem .45rem .45rem;
+    color: #92704d;
+    font-size: .72rem;
+    font-weight: 900;
+    letter-spacing: .14em;
+}
+
+.quick-nav__button {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .72rem .8rem;
+    border: 0;
+    border-radius: 13px;
+    background: transparent;
+    color: #355661;
+    font: inherit;
+    font-size: .9rem;
+    font-weight: 800;
+    text-align: left;
+    cursor: pointer;
+    transition: background .18s ease, color .18s ease, transform .18s ease;
+}
+
+.quick-nav__button:hover {
+    background: #f3eee4;
+    color: #153f4e;
+    transform: translateX(-2px);
+}
+
+.quick-nav__button:focus-visible,
+.quick-nav__toggle:focus-visible {
+    outline: 3px solid rgba(191, 154, 109, .28);
+    outline-offset: 3px;
+}
+
+.quick-nav__dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: #c9b9a4;
+}
+
+.quick-nav__button--active {
+    background: #eee7db;
+    color: #153f4e;
+}
+
+.quick-nav__button--active .quick-nav__dot {
+    background: #153f4e;
+}
+
+.quick-nav__toggle {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 50%;
+    background: #153f4e;
+    color: #fffaf0;
+    box-shadow: 0 12px 28px rgba(21, 63, 78, .24);
+    cursor: pointer;
+    transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.quick-nav__toggle:hover {
+    transform: translateY(-2px);
+    background: #1d5060;
+    box-shadow: 0 16px 34px rgba(21, 63, 78, .28);
+}
+
+.quick-nav--open .quick-nav__toggle {
+    background: #92704d;
+}
+
+.section[id] {
+    scroll-margin-top: 24px;
+}
+
+@keyframes quick-menu-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 /* =========================
@@ -1736,6 +1907,29 @@ const announcements = [
 }
 
 @media (max-width: 767px) {
+    .quick-nav {
+        right: 16px;
+        bottom: 16px;
+    }
+
+    .quick-nav__panel {
+        width: min(220px, calc(100vw - 32px));
+    }
+
+    .quick-nav__toggle {
+        width: 52px;
+        height: 52px;
+    }
+
+    .quick-nav__button {
+        min-height: 44px;
+        font-size: .88rem;
+    }
+
+    .section[id] {
+        scroll-margin-top: 18px;
+    }
+
     .event-hero {
         min-height: 46vh;
     }
